@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<!doctype html>
+<html xmlns ="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+      >
+    
+    <head th:replace="~{layout/plantilla :: head}"/>
+    
     <body>
-        <div>TODO ese write content</div>
+            <nav th:replace="~{layout/plantilla :: nav}"/>
+                        <section th:replace="~{layout/plantilla :: hero}"/>
+                                                <section th:replace="~{layout/plantilla :: projects}"/>
+                                                                                                <section th:replace="~{layout/plantilla :: stack}"/>
+                                                                                                
+                                                                                                <footer th:replace="~{layout/plantilla :: footer}"/>
+
+
+
+
     </body>
-</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+    <head th:fragment="head">
+        <title>Portafolio</title>
+        <meta charset="UTF-8">
+
+            <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"rel="stylesheet"/>
+            <link th:href="@{/webjars/font-awesome/css/all.css}"rel="stylesheet"/>
+
+            <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+            <script src="/js/script.js" type="text/javascript"></script>
+
+            <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </head>
+
+
+    <!-- ===================== NAVBAR ===================== -->
+
+    <body class="d-flex flex-column min-vh-100 ">
+        <!--Nav-->
+        <nav class="navbar navbar-expand-lg navbar-dark " th:fragment="nav">
+            <div class="container d-flex align-items-center gap-3">
+
+                <!--Logo + Brand-->
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <img src="static/icon/data-engineer.ico" alt="logo" width="32" height="32"
+                         class="d-inline-block align-text-top">
+                        Turning Data into Solutions
+                </a>
+
+                <!--Boton de Hamburguesa-->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Contenido del menu colapsable-->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto">
+
+                        <!--Elementos del menu colapsable-->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PROJECTS</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===================== HERO ===================== -->
+        <section class="hero d-flex align-items-center text-black py-5 fade-in" th:fragment="hero">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Columna izquierda: Texto -->
+                    <div class="col-12 col-md-6 text-center text-md-start">
+                        <h1 class="text-white">Jonathan Barrantes</h1>
+                        <p class="userTitle display-5 lead">Backend & Data Engineer</p>
+                        <p>Passionate about backend development and data engineering, I specialize in building efficient, scalable,
+                            and
+                            high-performance systems. My expertise lies in designing robust architectures, optimizing databases, and
+                            automating processes to enhance efficiency and reliability.</p>
+                        <p>I enjoy tackling complex problems, writing clean and maintainable code, and continuously learning new
+                            technologies to improve my craft.</p>
+                        <a href="#" class="btn btn-lg mt-3 ps-5 pe-5">Contactar</a>
+                    </div>
+
+                    <!-- Columna derecha: Imagen (Ocultar en pantallas celulares en md en adelante) -->
+                    <div class="col-md-6 d-none d-md-block">
+                        <img src="static/pics/home.png" alt="Imagen representativa" class="img-fluid">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== PROJECTS ===================== -->
+        <section class="projects py-5 text-center " th:fragment="projects">
+            <h2 class="mb-4">Proyectos</h2>
+            <!-- 🎯 Carrusel Bootstrap para pantallas grandes -->
+            <div id="carouselCards" class="carousel slide d-none d-md-block" data-bs-ride="carousel" data-bs-interval="6000">
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row justify-content-center g-4">
+                                <div class="col-md-4 d-flex">
+                                    <div class="card h-100">
+                                        <img src="static/Project-1.svg" class="card-img-top" alt="...">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title">API para historial crediticio</h5>
+                                                <p class="card-text">PAPI REST que expone puntuaciones de riesgo financiero conectando fuentes
+                                                    internas/externas. Optimización de queries complejas con Snowflake.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                    <div class="card h-100">
+                                        <img src="static/Project-2.svg" class="card-img-top" alt="...">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title">Sistema de gestión de inventario</h5>
+                                                <p class="card-text">Aplicación web para seguimiento de inventario en tiempo real. CRUD con Spring
+                                                    Boot y paneles con Power BI para análisis.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                    <div class="card h-100">
+                                        <img src="static/Project-3.svg" class="card-img-top" alt="...">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title">Plataforma de reservas médicas</h5>
+                                                <p class="card-text"> Sistema para agendamiento de citas, notificaciones automáticas y autenticación
+                                                    segura con JWT. Backend en Java.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row justify-content-center g-4">
+                                <div class="col-md-4 d-flex">
+                                    <div class="card h-100">
+                                        <img src="static/Project-4.svg" class="card-img-top" alt="...">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title">Monitor de precios de criptomonedas</h5>
+                                                <p class="card-text"> Script en Python con API de CoinGecko y alertas por Telegram. Frontend
+                                                    responsivo en React con Bootstrap.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                    <div class="card h-100">
+                                        <img src="static/Project-5.svg" class="card-img-top" alt="...">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title">Dashboard de métricas de ventas</h5>
+                                                <p class="card-text"> Reporte dinámico en Power BI con RLS y filtros interactivos. Extracción de
+                                                    datos vía Python desde Snowflake.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                    <div class="card h-100">
+                                        <img src="static/Project-6.svg" class="card-img-top" alt="...">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title">Aplicación de seguimiento de gastos</h5>
+                                                <p class="card-text"> App multiplataforma con gráficos y reportes. Backend en Flask y almacenamiento
+                                                    local con SQLite.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--Controles-->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+
+            <!-- 📱 Scroll horizontal para móviles -->
+            <div class="d-md-none px-3">
+                <div id="mobileProjectScroll" class="d-flex overflow-auto flex-nowrap gap-3 py-2"
+                     style="scroll-snap-type: x mandatory;">
+                    <!-- Card 1 -->
+                    <div class="card flex-shrink-0" style="width: 85vw; max-width: 320px; scroll-snap-align: start;">
+                        <img src="static/Project-1.svg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">API para historial crediticio</h5>
+                                <p class="card-text">API REST que expone puntuaciones de riesgo financiero conectando fuentes
+                                    internas/externas. Optimización de queries complejas con Snowflake.</p>
+                            </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card flex-shrink-0" style="width: 85vw; max-width: 320px; scroll-snap-align: start;">
+                        <img src="static/Project-2.svg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Sistema de gestión de inventario</h5>
+                                <p class="card-text">Aplicación web para seguimiento de inventario en tiempo real. CRUD con Spring Boot y
+                                    paneles con Power BI para análisis.</p>
+                            </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card flex-shrink-0" style="width: 85vw; max-width: 320px; scroll-snap-align: start;">
+                        <img src="static/Project-3.svg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Plataforma de reservas médicas</h5>
+                                <p class="card-text"> Sistema para agendamiento de citas, notificaciones automáticas y autenticación segura
+                                    con JWT. Backend en Java.</p>
+                            </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="card flex-shrink-0" style="width: 85vw; max-width: 320px; scroll-snap-align: start;">
+                        <img src="static/Project-4.svg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Monitor de precios de criptomonedas</h5>
+                                <p class="card-text"> Script en Python con API de CoinGecko y alertas por Telegram. Frontend responsivo en
+                                    React con Bootstrap.</p>
+                            </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="card flex-shrink-0" style="width: 85vw; max-width: 320px; scroll-snap-align: start;">
+                        <img src="static/Project-5.svg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Dashboard de métricas de ventas</h5>
+                                <p class="card-text"> Reporte dinámico en Power BI con RLS y filtros interactivos. Extracción de datos vía
+                                    Python desde Snowflake.</p>
+                            </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="card flex-shrink-0" style="width: 85vw; max-width: 320px; scroll-snap-align: start;">
+                        <img src="static/Project-6.svg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Aplicación de seguimiento de gastos</h5>
+                                <p class="card-text"> App multiplataforma con gráficos y reportes. Backend en Flask y almacenamiento local
+                                    con SQLite.</p>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- ===================== TECH STACK ===================== -->
+        <section class="techstack py-5 text-center" th:fragment="stack">
+            <div class="container">
+                <h2 class="mb-4">Tecnologías</h2>
+
+                <div class="tech-icons-bar">
+                    <img src="static/logos/java-svgrepo-com.svg" class="tech-icon" alt="Java">
+                        <img src="static/logos/python-svgrepo-com.svg" class="tech-icon" alt="Python">
+                            <img src="static/logos/icons8-spring-boot.svg" class="tech-icon" alt="Spring Boot">
+                                <img src="static/logos/mysql-logo-svgrepo-com.svg" class="tech-icon" alt="MySQL">
+                                    <img src="static/logos/snowflake-logo.svg" class="tech-icon" alt="Snowflake">
+                                        <img src="static/logos/power-bi-icon.svg" class="tech-icon" alt="Power BI">
+                                            <img src="static/logos/reactjs-ar21.svg" class="tech-icon" alt="React">
+                                                <img src="static/logos/bootstrap-svgrepo-com.svg" class="tech-icon" alt="Bootstrap">
+                                                    </div>
+
+                                                    </div>
+                                                    </section>
+
+
+
+
+
+
+                                                    <!-- ===================== FOOTER ===================== -->
+                                                    <footer class="bg-dark text-white text-center py-3 mt-auto" th:fragment="footer">
+                                                        <div class="container">
+                                                            <small>&copy; 2025 Jonathan Barrantes. Todos los derechos reservados.</small>
+                                                        </div>
+                                                    </footer>
+                                                    <script src="js/script.js"></script>
+                                                    </body>
+                                                    </html>
