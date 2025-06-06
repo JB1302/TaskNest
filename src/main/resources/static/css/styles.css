@@ -1,140 +1,39 @@
-html{
-    scroll-behavior: smooth;
-}
-
-body {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='60' height='60' patternTransform='scale(2) rotate(0)'><rect width='100%' height='100%' fill='%231a1a1a'/><path d='M10 60V30m10 0v30m10 0H0V30M50 0v30m-10 0V0M30 0h30v30M30 40h30m0 10H30m0-20h30v30H30zM0 10h30m0 10H0M0 0h30v30H0z' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/></pattern></defs><rect width='100%' height='100%' fill='url(%23a)'/></svg>");
-  color: white;
-}
-
-.navbar {
-  background: #111116;
+*{
+    margin:0;
+    padding: 0;
+    
 }
 
 
-
-.hero {
-  overflow: hidden;
+.navbar{
+    background-color: #586F7C;
 }
 
-
-.btn {
-  background: #127A99;
-  color: white;
+li > a.nav-link{
+    background-color: #2F4550;
+    border:solid ;
+    border-width: 1px;
+    border-color: #F4F4F9; 
+    border-radius: 8px;
+    
+    text-align: center;
 }
 
-.btn:hover {
-  background-color: #1494b8;
-  box-shadow: 0 0 10px rgba(18, 122, 153, 0.4);
-  transition: all 0.3s ease;
-  color: white;
+body{
+    background-color: #000000;
 }
 
+main {
+  position: relative;
+  z-index: 1;
 
-.userTitle {
-  color: #21B6A8;
-}
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='87' height='50.232' patternTransform='scale(1) rotate(90)'><rect x='0' y='0' width='100%' height='100%' fill='%23000000ff'/><path d='M0 54.424l14.5-8.373c4.813 2.767 9.705 5.573 14.5 8.37l14.5-8.373V29.303M0 4.193v16.744l-14.5 8.373L0 37.68l14.5-8.374V12.562l29-16.746m43.5 58.6l-14.5-8.37v-33.49c-4.795-2.797-9.687-5.603-14.5-8.37m43.5 25.111L87 37.67c-4.795-2.797-24.187-13.973-29-16.74l-14.5 8.373-14.5-8.37v-33.489m72.5 8.365L87 4.183l-14.5-8.37M87 4.183v16.745L58 37.673v16.744m0-66.976V4.185L43.5 12.56c-4.795-2.797-24.187-13.973-29-16.74L0 4.192l-14.5-8.37m29 33.484c4.813 2.767 9.705 5.573 14.5 8.37V54.42'  stroke-linejoin='round' stroke-linecap='round' stroke-width='1.5' stroke='%232f4550ff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-71,-31.464)' fill='url(%23a)'/></svg>");
+  
+  background-color: rgba(0, 0, 0, 0.75); /* 75% de opacidad */
+  background-blend-mode: multiply;
 
-p {
-  color: white;
-}
-
-.hero .container .row>div:first-child {
-  max-width: 600px;
-}
-
-footer {
-  font-size: 0.9rem;
-  background-color: #1e1e2f;
-}
-
-.hero img {
-  max-width: 636px;
-}
-
-
-.card {
-  max-width: 320px;
-  margin: auto;
-  height: 100%;
-}
-
-.card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  overflow: hidden;
-  min-height: 160px;
-  max-height: 160px;
-}
-
-.card-text {
-  color: gray;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-
-  /* Compatibilidad futura (aunque no todos los navegadores lo usan) */
-  line-clamp: 4;
-}
-
-.card.flex-shrink-0 {
-  width: min(85vw, 320px);
-}
-
-
-.navbar-dark .navbar-nav .nav-link.active {
-  color: #21B6A8;
-  font-weight: bold;
-}
-
-.navbar-dark .navbar-nav .nav-link.active:hover {
-  color: #30c5b6;
-  transition: 0.2s;
-  font-weight: bold;
-}
-
-
-
-.techstack {
-  background-color: #1e1e2f;
-}
-
-.projects {
-  background-color: #171717;
-}
-
-.techstack h2, .projects h2{
-  color: #21B6A8;
-}
-
-.tech-icons-bar {
-  display: flex;
-  flex-wrap: wrap; /* ✅ permite que bajen de línea en pantallas pequeñas */
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem 0;
-}
-
-
-.tech-icon {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  display: block;
-  margin: auto;
-  padding: 4px;
-  transition: transform 0.3s ease;
-  filter: grayscale(100%) brightness(1.2);
-}
-
-
-.tech-icon:hover {
-  filter: grayscale(0%);
-  transform: scale(1.1);
+  /* Extras visuales opcionales */
+  background-repeat: repeat;
+  background-size: auto;
+  color: white; /* para que el texto contraste */
 }
