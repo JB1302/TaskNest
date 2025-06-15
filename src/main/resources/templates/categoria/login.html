@@ -8,10 +8,15 @@
 
     <body class="d-flex flex-column min-vh-100">
         <nav th:replace="~{layout/plantilla :: nav}" />
-        
-        <main th:replace="~{categoria/home :: hero}" />
-        
-        <footer th:replace="~{layout/plantilla :: footer}" />
 
+        <p>Login</p>
+
+        <form th:action="@{/login}" method="post">
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <footer th:replace="~{layout/plantilla :: footer}" />
     </body>
 </html>

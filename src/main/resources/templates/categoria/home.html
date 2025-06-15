@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns ="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+      >
+
+    <head th:replace="~{layout/plantilla :: head}"/>
+
+    <body class="d-flex flex-column min-vh-100">
+        <nav th:replace="~{layout/plantilla :: nav}" />
+
+        <main class="d-flex flex-column align-items-center py-5 flex-fill justify-content-center" th:fragment="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Columna Izquierda -->
+                    <div class="col-12 col-md-8 text-center text-md-start">
+                        <h1 class="display-1">Organiza tu día. Cumple tus metas.</h1>
+                        <h2 class="lead">
+                            TaskNest te ayuda a planificar, priorizar y ejecutar tus tareas con una interfaz limpia y poderosa. Sin distracciones. Sin caos. Solo resultados.
+                        </h2>
+                    </div>
+                    <!-- Columna Derecha -->
+                    <div class="col-md-4 d-none d-md-block">
+                        <img src="/svg/CallCenter.svg" class="img-fluid" alt="Ilustración representativa">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="~{layout/plantilla :: footer}" />
+    </body>
+</html>
