@@ -1,16 +1,46 @@
 <!doctype html>
-<html xmlns ="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
-      >
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
-    <head th:replace="~{layout/plantilla :: head}"/>
+<head th:replace="~{layout/plantilla :: head}"/>
+<body class="d-flex flex-column min-vh-100">
+<nav th:replace="~{layout/plantilla :: nav}" />
 
-    <body class="d-flex flex-column min-vh-100">
-        <nav th:replace="~{layout/plantilla :: nav}" />
-
-        <p>Registrar</p>
+<main class="flex-fill d-flex justify-content-center align-items-center">
+    <div class="card shadow rounded d-flex flex-row p-4 bg-custom border border-white" style="max-width: 900px;">
         
-        <footer th:replace="~{layout/plantilla :: footer}" />
-    </body>
+        <!-- Formulario -->
+        <div class="col-12 col-md-6 pe-md-4">
+            <form>
+                <h1 class="text-H1 display-6 mb-4">Registrarse</h1>
+
+                <div class="form-group mb-3">
+                    <label class="text-white" for="nombreInput">Nombre</label>
+                    <input type="text" class="form-control" id="nombreInput">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="text-white" for="correoInput">Correo</label>
+                    <input type="email" class="form-control" id="correoInput">
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="text-white" for="contrasenaInput">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasenaInput">
+                </div>
+
+                <button type="submit" class="btn btn-custom btn-lg w-100 border-white">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- Imagen -->
+        <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
+            <img src="svg/GirlHoldingPaper.svg" alt="Imagen representativa" class="img-fluid" style="max-height: 300px;">
+        </div>
+    </div>
+</main>
+
+<footer th:replace="~{layout/plantilla :: footer}" />
+</body>
 </html>

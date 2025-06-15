@@ -37,3 +37,18 @@ main {
   background-size: auto;
   color: white; /* para que el texto contraste */
 }
+
+
+.bg-custom{
+    background: #586F7C;
+}
+
+.btn-custom{
+    background: #2F4550;
+    color: white;
+}
+
+.text-H1{
+    color: #B8DBD9;
+    font-weight: 600;
+}
